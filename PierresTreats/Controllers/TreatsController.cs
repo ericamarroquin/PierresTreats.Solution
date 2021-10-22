@@ -50,5 +50,14 @@ namespace PierresTreats.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Details(int id)
+    {
+      var chosenTreat = _db.Treats
+        .Include(treat => treat.JoinEntities)
+        .ThenInclude(join => join.Treat)
+        .FirstOrDefault(treat => treat.TreatId == id);
+      return View(chosenTreat);
+    }
   }
 }
