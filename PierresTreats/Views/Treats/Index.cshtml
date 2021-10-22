@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.Models;
+@model List<PierresTreats.Models.Treat>;
+
+<h1>Treats</h1>
+<p>Select a treat to see its details!</p>
+
+@if (Model.Count == 0)
+{
+  <p>No treats have been added yet.</p>
+}
+
+<ul>
+  @foreach (Treat treat in Model)
+  {
+    <li>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })</li>
+  }
+</ul>
+
+<button>
+  @Html.ActionLink("Add treat", "Create")
+</button>
+<button>
+  @Html.ActionLink("Home", "Index", "Home")
+</button>
