@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+@using System.Security.Claims;
+
+<h2>Log in or Register</h2>
+
+@if (User.Identity.IsAuthenticated)
+{
+  <h3>Hello, @User.Identity.Name!</h3>
+  @using (Html.BeginForm("LogOff", "Account"))
+  {
+    <input type="submit" value="Log out" class="btn btn-sm" />
+  }
+}
+else
+{
+  <button>@Html.ActionLink("Register", "Register")</button>
+  <button>@Html.ActionLink("Log In", "Login")</button>
+}
+
+<br>
+
+<button>@Html.ActionLink("Home", "Index", "Home")</button>
