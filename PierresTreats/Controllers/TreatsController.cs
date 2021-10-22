@@ -51,6 +51,7 @@ namespace PierresTreats.Controllers
       return RedirectToAction("Index");
     }
 
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       var chosenTreat = _db.Treats

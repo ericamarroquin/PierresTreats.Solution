@@ -42,6 +42,7 @@ namespace PierresTreats.Controllers
       return RedirectToAction("Index");
     }
 
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       var chosenFlavor = _db.Flavors
