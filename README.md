@@ -54,7 +54,7 @@ This application will allow a user to market treats and their flavors from a bak
 
 ## Known Bugs
 
-* No know issues
+* Same flavor can be added to treat multiple times 
 
 ## License
 
